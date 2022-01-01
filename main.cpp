@@ -7,18 +7,18 @@
 #include <csignal> // handler for cleaning memory when user hits ctrl + c
 
 using std::cout;
-#define MAX_BOARD 50
+#define MAX_BOARD 70
 
 bool __ctrl_c_capture = true;
 
-void handler (int signal) { 
+void handler(int signal) { 
     __ctrl_c_capture = false;
 };
 
 void printBoard(char **board, int len) {
     for (int i = 0; i < len; i++) {
         for (int j = 0; j < len; j++) {
-            if (board[i][j] == 1){
+            if (board[i][j] == 1) {
                 cout << '+' << ' ';
             } else cout << ' ' << ' ';
         }
@@ -136,6 +136,7 @@ int main( int argc, const char *argv[] ) {
             prob = rand() % 100;
         }
     }
+    
     // Game Loop
     
     signal(SIGINT, handler); // to handle memory cleanup when user terminates infinite loop w/ ctrl + c
