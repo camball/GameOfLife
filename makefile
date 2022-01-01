@@ -12,9 +12,9 @@ all:
 
 debug:
 	@if [ '$(compiler)' = 'g++' ]; then\
-        echo "$(compiler) -ggdb $(flags) main.cpp";\
+		echo "$(compiler) -ggdb $(flags) main.cpp";\
 		$(compiler) -ggdb $(flags) main.cpp;\
-    elif [ '$(compiler)' = 'clang++' ]; then\
+	elif [ '$(compiler)' = 'clang++' ]; then\
 		echo "$(compiler) -Og -g $(flags) main.cpp";\
 		$(compiler) -Og -g $(flags) main.cpp;\
 	else\
